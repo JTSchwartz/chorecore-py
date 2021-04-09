@@ -103,7 +103,7 @@ def is_odd(test_val, return_val=Default.PARAMETER, else_val=''):
 
 
 def is_true(test_val, return_val=Default.PARAMETER, else_val=''):
-	if not test_val:
+	if test_val:
 		if return_val is Default.PARAMETER:
 			return_val = test_val
 		return return_val

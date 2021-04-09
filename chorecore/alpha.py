@@ -19,24 +19,24 @@ class Alphabet:
 
 
 def lowercase_at(i):
-	return Alphabet.LOWERCASE[i]
+	return Alphabet.LOWERCASE[i % 26]
 
 
 def uppercase_at(i):
-	return Alphabet.UPPERCASE[i]
+	return Alphabet.UPPERCASE[i % 26]
 
 
 def lowercase_vowel_at(i):
-	return Alphabet.LOWERCASE_VOWELS[i]
+	return Alphabet.LOWERCASE_VOWELS[i % 26]
 
 
 def uppercase_vowel_at(i):
-	return Alphabet.UPPERCASE_VOWELS[i]
+	return Alphabet.UPPERCASE_VOWELS[i % 26]
 
 
 def lowercase_non_vowel_at(i):
-	return Alphabet.LOWERCASE_NON_VOWELS[i]
+	return Alphabet.LOWERCASE_NON_VOWELS[i % 26]
 
 
 def uppercase_non_vowel_at(i):
-	return Alphabet.UPPERCASE_NON_VOWELS[i]
+	return Alphabet.UPPERCASE_NON_VOWELS[i % 26]

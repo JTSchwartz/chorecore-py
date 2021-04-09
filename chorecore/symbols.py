@@ -1,6 +1,6 @@
 from . import conditionals, fraction, math
 
-fraction_map = {
+_fraction_map = {
 	1 / 2:  fraction.Fraction.ONE_HALF,
 	1 / 3:  fraction.Fraction.ONE_THIRD,
 	1 / 4:  fraction.Fraction.ONE_QUARTER,
@@ -23,12 +23,16 @@ fraction_map = {
 
 
 def fraction_to_symbol(original):
-	original = math.parse_fraction_string(original) if original is str else original
+	if type(original) is str:
+		if "/" in original:
+			original = math.parse_fraction_string(original)
+		else:
+			original = float(original)
 
 	is_negative = original < 0
 	original = abs(original)
 
 	assert -1 < original < 1
 
-	symbol = fraction_map[math.closest(original, fraction_map.keys())]
+	symbol = _fraction_map[math.closest(original, _fraction_map.keys())]
 	return f'{conditionals.is_true(is_negative, "-")}{symbol}'
