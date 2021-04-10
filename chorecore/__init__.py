@@ -1,7 +1,7 @@
-from . import alpha, conditionals, fraction, math, strings, symbols, time
+from . import alphabet, conditionals, fraction, math, strings, symbols, time
 
 __all__ = [
-	'alpha',
+	'alphabet',
 	'conditionals',
 	'fraction',
 	'math',
